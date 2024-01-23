@@ -67,9 +67,7 @@
       <button onclick="clearDisplay()" style="color: red;">C</button>
       <button onclick="appendToDisplay('/')" style="color: deepskyblue;">/</button>
       <button onclick="appendToDisplay('%')" style="color: deepskyblue;">%</button>
-      <button style="color: deepskyblue;" onclick="backspace()">
-        <i class="fas fa-backspace"></i>
-    </button>
+     <button onclick="deleteLastCharacter()"style="color: deepskyblue;">DEL</button>
       <button onclick="appendToDisplay('7')">7</button>
       <button onclick="appendToDisplay('8')">8</button>
       <button onclick="appendToDisplay('9')">9</button>
@@ -106,6 +104,10 @@
       } catch (error) {
         display.value = 'Error';
       }
+    }
+     function deleteLastCharacter() {
+        let currentDisplayValue = document.getElementById('display').value;
+        document.getElementById('display').value = currentDisplayValue.slice(0, -1);
     }
   </script>
 </body>
